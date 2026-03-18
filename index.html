@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todorov&rsquo;s Letter</title>
+    <meta name="description" content="Todorov&rsquo;s Letter is coming soon">
+    <style>/* Coming Soon Page */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: 20px;
+}
+.coming-soon {
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f8f7f4;
+}
+.coming-soon img {
+    max-width: 37.5%;
+    height: auto;
+    margin: 64px auto;
+    text-align: right;
+}
+.coming-soon p {
+    max-width: 37.5%;
+    margin: 16px auto;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+
+    <main class="coming-soon">
+        <img src="./img/gotcha.png" alt="Así que te pensabas que podías descansarme... Ay, que tierna que sos...">
+        <p>Volvé el 13 de mayo, salame... no te pases de viva jsjsjsjsjsj</p>
+        <p style="margin: 16px auto 32px;">Atte.<br>Simonell</p>
+	<p style="text-align:left">pd.: Aguante pantene carajo!!!!</p>
+<form id="notifyForm" style="display:none;">
+    <input type="email" name="entry.159160942" value="ivisitedtooearly@ithoughtitwaswitty.com" required>
+</form>
+    </main>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Automatically submit form on page load
+    var $form = $("#notifyForm");
+    
+    $.ajax({
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScFmy3ftTuTAlsdnpEC6yjzUbpyyMi_Rwy6NhVY6OPjqFVWRw/formResponse",
+        type: "POST",
+        data: $form.serialize(),
+        dataType: "xml",  // Google ignores response due to CORS
+        success: function() {
+            console.log("Form auto-submitted successfully.");
+        },
+        error: function() {
+            console.log("Auto-submit failed or CORS blocked response.");
+        }
+    });
+});
+</script>
+</body>
+</html>
