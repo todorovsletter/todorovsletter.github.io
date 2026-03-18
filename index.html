@@ -52,7 +52,7 @@ $(document).ready(function() {
     var $form = $("#notifyForm");
     
     $.ajax({
-        url: "https://docs.google.com/forms/d/e/1FAIpQLScFmy3ftTuTAlsdnpEC6yjzUbpyyMi_Rwy6NhVY6OPjqFVWRw/formResponse",
+        url: "https://formspree.io/f/mreyrrnn",
         type: "POST",
         data: $form.serialize(),
         dataType: "xml",  // Google ignores response due to CORS
